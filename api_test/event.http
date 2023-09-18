@@ -1,0 +1,15 @@
+GET http://localhost:3000/api/event/
+
+### Get Single Event
+GET http://localhost:3000/api/event/7ce77f9d-2f55-434f-8746-b2d0214f2d89
+
+### Create Event
+POST http://localhost:3000/api/event
+
+{
+    "name": "Event 1",
+    "description": "Event 1 description",
+    "location": "Event 1 location",
+    "date": "2019-01-01",
+    "authorId": "909d1c30-b04e-4099-92b2-f7d6021a5621"
+}

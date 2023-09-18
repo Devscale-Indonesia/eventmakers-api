@@ -1,0 +1,9 @@
+### Create User
+POST http://localhost:3000/api/join-event
+
+{
+    "name": "342342",
+    "email": "sdfsd@doe.com",
+    "phone": "sdfsdf",
+    "eventId": "7ce77f9d-2f55-434f-8746-b2d0214f2d89"
+}

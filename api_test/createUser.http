@@ -1,8 +1,0 @@
-### Create User
-POST http://localhost:3000/api/auth/register
-
-{
-    "name": "John Doe",
-    "email": "john@doe.com",
-    "password": "123456"
-}

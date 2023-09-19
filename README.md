@@ -14,6 +14,10 @@ Method: `POST` <br>
 Headers: Content-Type: application/json <br>
 Body: { email, password }
 
+### JWT Verification
+JWT valid for 7 days
+secretkey: secret1234567890
+
 ## Events
 
 ### List Many Event
@@ -25,7 +29,7 @@ Endpoint: https://eventmakers-api.vercel.app/api/event/:id <br>
 Method: `GET`
 
 ### Create Event
-Endpoint: https://eventmakers-api.vercel.app/api/event/ <br>
+Endpoint: https://eventmakers-api.vercel.app/api/event <br>
 Method: `POST` <br>
 Headers: Content-Type: application/json <br>
 Body: { name,description, location, date, authorId }

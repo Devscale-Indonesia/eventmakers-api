@@ -25,7 +25,7 @@ Endpoint: https://eventmakers-api.vercel.app/api/event/:id <br>
 Method: `GET`
 
 ### Create Event
-Endpoint: https://eventmakers-api.vercel.app/api/event/:id <br>
+Endpoint: https://eventmakers-api.vercel.app/api/event/ <br>
 Method: `POST` <br>
 Headers: Content-Type: application/json <br>
 Body: { name,description, location, date, authorId }

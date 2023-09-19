@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/utils/prisma";
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 
 export async function POST(request: NextRequest) {
   const { email, password } = await request.json();
+
+  if (!email || !password) {
+    return NextResponse.json({ message: "Email and password are required" }, { status: 400 });
+  }
 
   try {
     const findUser = await prisma.user.findFirst({
@@ -11,6 +16,8 @@ export async function POST(request: NextRequest) {
         email,
       },
     });
+
+    console.log(findUser);
 
     if (!findUser) {
       return NextResponse.json({ message: "User not found" }, { status: 404 });
@@ -22,9 +29,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: "Invalid password" }, { status: 401 });
     }
 
-    const token = jwt.sign({ id: findUser.id }, process.env.JWT_SECRET!, { expiresIn: "7d" });
+    const payload = {
+      id: findUser.id,
+      name: findUser.name,
+      email: findUser.email,
+      role: findUser.role,
+    };
 
-    return NextResponse.json({ data: findUser, token, message: "Login succesfully" }, { status: 200 });
+    const token = jwt.sign(payload, process.env.JWT_SECRET!, { expiresIn: "7d" });
+
+    return NextResponse.json({ data: payload, token, message: "Login succesfully" }, { status: 200 });
+
+    return;
   } catch (error) {
     console.log(error);
     return NextResponse.json({ error, message: "Something went wrong" }, { status: 500 });

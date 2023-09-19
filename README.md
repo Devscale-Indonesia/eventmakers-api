@@ -6,7 +6,8 @@
 Endpoint: https://eventmakers-api.vercel.app/api/auth/register <br>
 Method: `POST` <br>
 Headers: Content-Type: application/json <br>
-Body: { name, email, password } 
+Body: { name, email, password } <br>
+Note: `We do not encrypt your password, don't use real password`
 
 ### User Login
 Endpoint: https://eventmakers-api.vercel.app/api/auth/login <br>

@@ -15,7 +15,7 @@ Headers: Content-Type: application/json <br>
 Body: { email, password }
 
 ### JWT Verification
-JWT valid for 7 days
+JWT valid for 7 days <br>
 secretkey: secret1234567890
 
 ## Events

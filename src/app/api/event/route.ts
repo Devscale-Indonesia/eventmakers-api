@@ -17,13 +17,14 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const { name, description, date, location, authorId } = await request.json();
+  const { name, description, image, date, location, authorId } = await request.json();
 
   try {
     const event = await prisma.event.create({
       data: {
         name,
         description,
+        image,
         date,
         location,
         authorId,

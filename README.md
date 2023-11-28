@@ -13,7 +13,8 @@ Data Type:
 - name: string
 - email: string
 - password: string
-  Note: `We do not encrypt your password, don't use real password`
+
+Note: `We do not encrypt your password, don't use real password`
 
 ### User Login
 
@@ -35,20 +36,20 @@ secretkey: secret1234567890
 
 ### List Many Event
 
-Endpoint: https://eventmakers-api.vercel.app/api/event <br>
+Endpoint: https://eventmakers-api.vercel.app/api/events <br>
 Method: `GET`
 
 ### List Single Event
 
-Endpoint: https://eventmakers-api.vercel.app/api/event/:id <br>
+Endpoint: https://eventmakers-api.vercel.app/api/events/:id <br>
 Method: `GET`
 
 ### Create Event
 
-Endpoint: https://eventmakers-api.vercel.app/api/event <br>
+Endpoint: https://eventmakers-api.vercel.app/api/events <br>
 Method: `POST` <br>
 Headers: Content-Type: application/json <br>
-Body: { name,description, location, date, authorId }
+Body: { name, description, image, location, date, authorId }
 Data Type:
 
 - name: string
@@ -59,7 +60,7 @@ Data Type:
 
 ### Join Event
 
-Endpoint: https://eventmakers-api.vercel.app/api/join-event <br>
+Endpoint: https://eventmakers-api.vercel.app/api/join-events <br>
 Method: `POST` <br>
 Headers: Content-Type: application/json <br>
 Body: { name, email, phone, eventId }

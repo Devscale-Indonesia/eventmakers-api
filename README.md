@@ -44,6 +44,11 @@ Method: `GET`
 Endpoint: https://eventmakers-api.vercel.app/api/events/:id <br>
 Method: `GET`
 
+### List Single Event by User id
+
+Endpoint: https://eventmakers-api.vercel.app/api/events?userid=:userid <br>
+Method: `GET`
+
 ### Create Event
 
 Endpoint: https://eventmakers-api.vercel.app/api/events <br>

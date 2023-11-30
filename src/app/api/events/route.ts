@@ -2,7 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/utils/prisma";
 
 export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const userid = searchParams.get("userid");
+
   try {
+    if (userid) {
+      const events = await prisma.event.findMany({
+        where: {
+          authorId: userid,
+        },
+        include: {
+          participants: true,
+          author: true,
+        },
+      });
+      return NextResponse.json({ data: events, message: "Events fetched successfully" }, { status: 200 });
+    }
     const events = await prisma.event.findMany({
       include: {
         participants: true,
